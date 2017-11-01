@@ -1,0 +1,18 @@
+RewriteEngine on
+#rewritebase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+Options -Indexes
+ErrorDocument 404 /BLOG/error.php
+RewriteRule ^post/(\d+)/\w+/? post.php?id=$1 [NC,L]
+RewriteRule ^error$ error.php [NC,L]
+RewriteRule ^addCat$ addCat.php [NC,L]
+RewriteRule ^editCat$ editCat.php [NC,L]
+RewriteRule ^addContent$ addContent.php [NC,L]
+RewriteRule ^editContent$ editContent.php [NC,L]
+RewriteRule ^Admin$ Admin.php [NC,L]
+RewriteRule ^index$ index.php [NC,L]
+RewriteRule ^about$ about.php [NC,L]
+RewriteRule ^login$ login.php [NC,L]
+RewriteRule ^logout$ logout.php [NC,L]
+RewriteRule ^contact$ contact.php [NC,L]
